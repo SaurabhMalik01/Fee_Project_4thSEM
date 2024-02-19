@@ -1,12 +1,294 @@
-body{
+body {
     background-color: black;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     height: 100%;
+    /* width: 100%; */
     overflow: scroll;
-    
+
 }
+
 body::-webkit-scrollbar {
     display: none;
+}
+
+.top10_trending_news {
+    padding: 1%;
+    height: 300px;
+    /* overflow: scroll; */
+    width: 100%;
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    /* flex-wrap: wrap; */
+    /* display:; */
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+  
+    .text{
+        
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 0.5s ease, z-index 2s ease;
+        padding: 2%;
+        height: 100%;
+        width: 100%;
+        /* background-color: blue; */
+        z-index: 1;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        line-height: 35px;
+        justify-content: end;
+        align-items: flex-end;
+        overflow:hidden;
+        
+        /* place-items: end; */
+        h1{
+            font-size: 32px;
+            line-height: 40px;
+            text-align: left;
+            align-self: left;
+        }
+        
+
+    }
+    .news_one {
+        /* border: 2px solid white; */
+        /* box-shadow: 0px 0px 3px white; */
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        width: 90%;
+        height: 300px;
+        /* background-color: blue; */
+        border-radius: 10px;
+
+        display: flex;
+        justify-content: last baseline;
+        align-items: last baseline;
+        border: 1px transparent;
+        .news_img {
+            filter: blur(1px) brightness(0.4) contrast(1);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            background-repeat: no-repeat;
+            background-image: url('https://www.hindustantimes.com/ht-img/img/2024/02/13/550x309/PTI02-13-2024-000039B-0_1707804295778_1707804338588.jpg');
+            
+        }
+    }
+
+    
+
+    .content {
+        /* transition: 4s; */
+        position: relative;
+        background-color: red;
+        padding-left: 5%;
+        color: white;
+        border: 1px transparent;
+        overflow: scroll;
+        line-height: 30px;
+        height: 0%;
+        opacity: 1;
+        width: 100%;
+
+        border-radius: 10px;
+        filter: blur(0px);
+        background-color: rgba(0, 0, 0, 0.8);
+        transition: 2s ease;
+        h1{
+            font-size: 20px;
+            line-height: 30px;
+        }
+        
+    }
+
+    .content::-webkit-scrollbar {
+        display: none;
+    }
+
+    .news_one:hover .content {
+        height: 100%;
+        opacity: 1;
+        
+    }
+
+    .news_one:hover .news_img {
+        filter: blur(5px) brightness(0.4) contrast(1);
+    }
+
+    .news_one:hover .text{
+        z-index: -1;
+        opacity: 0;
+    }
+    
+
+    .news_two {
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        width: 90%;
+        height: 300px;
+        /* background-color: blue; */
+        border-radius: 10px;
+
+        display: flex;
+        justify-content: last baseline;
+        align-items: last baseline;
+        border: 1px transparent;
+        .news_img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            background-repeat: no-repeat;
+            background-image: url('https://c.ndtvimg.com/2024-02/sc94185_pm-modi-mohamed-bin-zayed_625x300_13_February_24.jpeg?downsize=570:351&w=570?im=FeatureCrop,algorithm=dnn,width=650,height=400');
+            filter: blur(1.5px) brightness(0.4) contrast(1);
+            background-position: 50%;
+        }
+    }
+    .news_two:hover .content {
+        height: 100%;
+        opacity: 1;
+    }
+
+    .news_two:hover .news_img {
+        filter: blur(5px) brightness(0.4) contrast(1);
+    }
+    .news_two:hover .text{
+    
+        opacity: 0;
+        z-index: -1;
+    }
+    
+
+    .news_three{
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        width: 90%;
+        height: 300px;
+        /* background-color: blue; */
+        border-radius: 10px;
+
+        display: flex;
+        justify-content: last baseline;
+        align-items: last baseline;
+        border: 1px transparent;
+        .news_img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            background-repeat: no-repeat;
+            background-image: url('https://www.hindustantimes.com/ht-img/img/2024/02/13/550x309/TOPSHOT-PAKISTAN-POLITICS-VOTE-1_1707832384459_1707832421039.jpg');
+            filter: blur(1.5px) brightness(0.4) contrast(1);
+            background-position: 50%;
+        }
+    }
+    .news_three:hover .content{
+        height: 100%;
+        opacity: 1;
+    }
+
+    .news_three:hover .news_img {
+        filter: blur(2px);
+    }
+    .news_three:hover .news_img {
+        filter: blur(5px) brightness(0.4) contrast(1);
+    }
+
+    .news_three:hover .text{
+        opacity: 0;
+        z-index: -1;
+    }
+
+
+    .news_four{
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        width: 90%;
+        height: 300px;
+        /* background-color: blue; */
+        border-radius: 10px;
+
+        display: flex;
+        justify-content: last baseline;
+        align-items: last baseline;
+        border: 1px transparent;
+        .news_img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            background-repeat: no-repeat;
+            background-image: url('https://www.aljazeera.com/wp-content/uploads/2024/02/HaldwaniAJ_01-1707816087.jpg?resize=770%2C513&quality=80');
+            filter: blur(1.5px) brightness(0.4) contrast(1);
+            background-position: 80%;
+        }
+    }
+    .news_four:hover .content{
+        height: 100%;
+        opacity: 1;
+    }
+
+    .news_four:hover .news_img {
+        filter: blur(5px) brightness(0.4) contrast(1);
+    }
+    .news_four:hover .text{
+         opacity: 0;
+        z-index: -1;
+    }
+
+}
+
+@media (max-width:900px)
+{
+    .top10_trending_news{
+        grid-template-columns: repeat(1,1fr);
+        .news_one{
+            height: 300px;
+            /* width: 90%; */
+        }
+        .news_two{
+            height: 300px;
+            /* width: 300px; */
+        }
+        .news_three{
+            height: 300px;
+            /* width: 300px; */
+        }
+        .news_four{
+            height: 300px;
+            /* width: 300px; */
+        }
+    }
+}
+@media (max-width:400px)
+{
+    .top10_trending_news{
+        grid-template-columns: repeat(1,1fr);
+        .news_one{
+            height: 200px;
+            /* width: 90%; */
+        }
+        .news_two{
+            height: 200px;
+            /* width: 200px; */
+        }
+        .news_three{
+            height: 200px;
+            /* width: 200px; */
+        }
+        .news_four{
+            height: 200px;
+            /* width: 200px; */
+        }
+    }
 }
