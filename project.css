@@ -4,18 +4,42 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     height: 100%;
-    /* width: 100%; */
-    overflow: scroll;
+    width: 97cqw;
+    overflow-y: scroll;
 
 }
 
 body::-webkit-scrollbar {
     display: none;
 }
-
+.main_div{
+    height: 15vh;
+    border: 2px solid white;
+}
+.main_content_wala{
+    overflow: hidden;
+    height: 82vh;
+    display: flex;
+    border: 2px solid white;
+    /* background-color: red; */
+    /* width: 100%; */
+    .left_wala{
+        border: 2px solid white;
+        /* background-color: green; */
+        width: 200%;
+        
+        height: 82vh;
+    }
+    .right_wala{
+        /* background-color: red; */
+    }
+}
 .top10_trending_news {
+    border: 2px solid white;
     padding: 1%;
-    height: 300px;
+    height: 250px;
+    overflow-y: scroll;
+    /* background-color: blue; */
     /* overflow: scroll; */
     width: 100%;
     /* background-color: red; */
@@ -25,7 +49,7 @@ body::-webkit-scrollbar {
     /* display:; */
     justify-content: center;
     gap: 20px;
-    align-items: center;
+    align-items: top;
   
     .text{
         
@@ -62,7 +86,7 @@ body::-webkit-scrollbar {
         position: relative;
         overflow: hidden;
         width: 90%;
-        height: 300px;
+        height: 250px;
         /* background-color: blue; */
         border-radius: 10px;
 
@@ -133,7 +157,7 @@ body::-webkit-scrollbar {
         position: relative;
         overflow: hidden;
         width: 90%;
-        height: 300px;
+        height: 250px;
         /* background-color: blue; */
         border-radius: 10px;
 
@@ -172,7 +196,7 @@ body::-webkit-scrollbar {
         position: relative;
         overflow: hidden;
         width: 90%;
-        height: 300px;
+        height: 250px;
         /* background-color: blue; */
         border-radius: 10px;
 
@@ -214,7 +238,7 @@ body::-webkit-scrollbar {
         position: relative;
         overflow: hidden;
         width: 90%;
-        height: 300px;
+        height: 250px;
         /* background-color: blue; */
         border-radius: 10px;
 
