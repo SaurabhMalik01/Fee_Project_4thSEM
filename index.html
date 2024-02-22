@@ -6,6 +6,7 @@
     <title>Trend Tracker</title>
     <link rel="icon" href="./Project Images/tt_logo.jpg" type="imgae">
     <link rel="stylesheet" href="./project.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <nav>
@@ -42,8 +43,43 @@
 
     <div class="main_content_wala">
         <div class="left_wala">
-
+            <div class="sidebar">
+            
+                <!-- menu items -->
+                <div class="menu">
+        
+                    <div class="item"><a href=""><i class="fa-solid fa-house"></i>Home</a></div>
+                    <div class="item"><a href=""><i class="fa-solid fa-earth-americas"></i>Popular</a></div>
+                    <div class="item"><a class="sub-btn">Topics
+                    <!-- sub menu 1-->
+                    <i class="fas fa-angle-down dropdown"></i>
+                    </a>
+                    <div class="sub-menu">
+                        <a href="" class="sub-item"><i class="fa-solid fa-gamepad"></i>Gaming</a>
+                        <a href="" class="sub-item"><i class="fa-solid fa-baseball"></i>Sports</a>
+                        <a href="" class="sub-item"><i class="fa-solid fa-chart-line"></i>Business</a>
+                        <a href="" class="sub-item"><i class="fa-solid fa-bitcoin-sign"></i>Crypto</a>
+                        <a href="" class="sub-item"><i class="fa-solid fa-landmark"></i>Politics</a>
+                    </div>
+                
+                
+                </div>
+                    <div class="item"><a class="sub-btn">Resources
+                        <!-- sub menu 2 -->
+                        <i class="fas fa-angle-down dropdown"></i>
+                    </a>
+                    <div class="sub-menu">
+                        <a href="" class="sub-item"><i class="fa-solid fa-circle-info"></i>About us</a>
+                        <a href="" class="sub-item"><i class="fa-regular fa-circle-question"></i>Help</a>
+                        <a href="" class="sub-item"><i class="fa-solid fa-book-open"></i>Blog</a>
+                    </div>
+                </div>
+                    <div class="item"><a href=""><i class="fa-regular fa-newspaper"></i>Private Policy</a></div>
+            </div>
         </div>
+        
+    </div>
+    <div class="ese_hei">
         <div class="right_wala"><div class="top10_trending_news">
             <div class="news_one">
                 <div class="text">
@@ -101,7 +137,28 @@
     
     </div></div>
     </div>
-    
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //expand and collapse of menu bar
+            //$('.menu-btn').click(function(){
+              //  $('.sidebar').addClass('active');
+                //$('.menu-btn').css('visibility','hidden');
+            //});
+            //collapse
+            //$('.close-btn').click(function(){
+              //  $('.sidebar').removeClass('active');
+                //$('.menu-btn').css('visibility','visible')
+            //})
+            //for toggling sub menus
+            $('.sub-btn').click(function(){
+                $(this).next('.sub-menu').slideToggle();
+                $(this).find('.dropdown').toggleClass('rotate');
+            });
+
+        });
+    </script>
 
 </body>
 </html>
