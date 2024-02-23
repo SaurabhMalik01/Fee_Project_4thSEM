@@ -1,9 +1,9 @@
 body {
-    background-color: black;
+    background-color: #0b1416;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
-    height: 100%;
+    height: 100vh;
     /* width: 99cqw; */
     overflow-y: scroll;
 
@@ -24,6 +24,7 @@ nav {
     z-index: 10;
     border-bottom: 2px solid white;
     caret-color: white;
+    background-color: #0b1416;
     /* background-color:  #0A0937; */
 }
 .logo{
@@ -214,30 +215,37 @@ body::-webkit-scrollbar {
 
 .main_content_wala{
     overflow: hidden;
-    height: 82vh;
+    height: 100%;
     display: flex;
     /* border: 2px solid white; */
     /* background-color: red; */
     /* width: 100%; */
     .left_wala{
-        border: 2px solid white;
+        /* border: 2px solid white; */
+        border-top: 0px;
         /* background-color: green; */
         /* width: 25%; */
         width: 250px;
         /* overflow: hidden; */
-        height: 82vh;
+        height: 100%;
+        background-color: #111c1f;
     }
     .right_wala{
+        display: flex;
         /* background-color: red; */
-        width: 100%;
+        width: 85vw;
+        padding-right: 5%;
+        overflow: scroll;
+        height: 300px;
+        /* background-color: #111c1f; */
         /* height: 99vh; */
         /* position: absolute ; */
     }
 }
 .sidebar{
     width: 250px;
-    background-color: #0b1416;
-    height: 100vh;
+    background-color: #111c1f;
+    height: 100%;
     /* position: fixed; */
     top: 0;
     overflow-y: auto;
@@ -299,22 +307,20 @@ body::-webkit-scrollbar {
 .sidebar::-webkit-scrollbar{
     width: 0px;
 }
-.top10_trending_news {
-    /* border: 2px solid white; */
-    padding: 1%;
-    height: 250px;
-    overflow-y: scroll;
-    /* background-color: blue; */
-    /* overflow: scroll; */
+.ese_hei{
+    height: 100%;
     width: 100%;
-    /* background-color: red; */
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    /* flex-wrap: wrap; */
-    /* display:; */
+    border-radius: 10px;
+    /* background-color: #08066D; */
+    margin: 10px;
+}
+.top10_trending_news {
+    padding: 1%;
+    /* width: 100vh; */
+    display: flex;
     justify-content: center;
     gap: 20px;
-    align-items: top;
+    /* align-items: top; */
   
     .text{
         
@@ -350,7 +356,7 @@ body::-webkit-scrollbar {
         cursor: pointer;
         position: relative;
         overflow: hidden;
-        width: 90%;
+        width: 300px;
         height: 250px;
         /* background-color: blue; */
         border-radius: 10px;
@@ -421,7 +427,7 @@ body::-webkit-scrollbar {
         cursor: pointer;
         position: relative;
         overflow: hidden;
-        width: 90%;
+        width: 300px;
         height: 250px;
         /* background-color: blue; */
         border-radius: 10px;
@@ -460,7 +466,7 @@ body::-webkit-scrollbar {
         cursor: pointer;
         position: relative;
         overflow: hidden;
-        width: 90%;
+        width: 300px;
         height: 250px;
         /* background-color: blue; */
         border-radius: 10px;
@@ -502,7 +508,7 @@ body::-webkit-scrollbar {
         cursor: pointer;
         position: relative;
         overflow: hidden;
-        width: 90%;
+        width: 300px;
         height: 250px;
         /* background-color: blue; */
         border-radius: 10px;
@@ -534,10 +540,104 @@ body::-webkit-scrollbar {
          opacity: 0;
         z-index: -1;
     }
+    .news_five{
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        width: 300px;
+        height: 250px;
+        /* background-color: blue; */
+        border-radius: 10px;
+        border: 1px solid #3b3838;
+        display: flex;
+        justify-content: last baseline;
+        align-items: last baseline;
+        /* border: 1px transparent; */
+        .news_img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            background-repeat: no-repeat;
+            background-image: url('https://bsmedia.business-standard.com/_media/bs/img/article/2024-02/18/full/1708226410-2671.jpg?im=FitAndFill=(826,465)');
+            filter: blur(1.5px) brightness(0.4) contrast(1);
+            background-position: 50%;
+        }
+    }
+    .news_five:hover .content{
+        height: 100%;
+        opacity: 1;
+    }
+
+    .news_five:hover .news_img {
+        filter: blur(5px) brightness(0.4) contrast(1);
+    }
+    .news_five:hover .text{
+         opacity: 0;
+        z-index: -1;
+    }
+    .news_six{
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        width: 300px;
+        height: 250px;
+        /* background-color: blue; */
+        border-radius: 10px;
+        border: 1px solid #3b3838;
+        display: flex;
+        justify-content: last baseline;
+        align-items: last baseline;
+        /* border: 1px transparent; */
+        .news_img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            background-repeat: no-repeat;
+            background-image: url('https://c.ndtvimg.com/2024-02/aekrouuo_biden-met-navalny-widow-wife_625x300_23_February_24.jpeg');
+            filter: blur(1.5px) brightness(0.4) contrast(1);
+            background-position-y: 30%;
+            background-position-x: 45%;
+        }
+    }
+    .news_six:hover .content{
+        height: 100%;
+        opacity: 1;
+    }
+
+    .news_six:hover .news_img {
+        filter: blur(5px) brightness(0.4) contrast(1);
+    }
+    .news_six:hover .text{
+         opacity: 0;
+        z-index: -1;
+    }
+    .empty{
+        height: 10px;
+        width: 10px;
+    }
+}
+.right_wala::-webkit-scrollbar{
+    display: none;
+}
+.ai_plus_library{
+    height: 100%;
+    width: 100%;
+    display: flex;
 
 }
-
-@media (max-width:900px)
+.ai_news_wala{
+    height: 100%;
+    width: 75%;
+    /* background-color: red; */
+}
+.library_wala{
+    height: 100%;
+    width:25%;
+    /* background-color: green; */
+}
+/* @media (max-width:900px)
 {
     .top10_trending_news{
         grid-template-columns: repeat(1,1fr);
@@ -580,4 +680,4 @@ body::-webkit-scrollbar {
             /* width: 200px; */
         }
     }
-}
+} */
