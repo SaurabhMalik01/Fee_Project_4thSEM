@@ -314,6 +314,9 @@ body::-webkit-scrollbar {
 #home:hover,#popular:hover,#topics:hover,#resources:hover,#cpolicy:hover,#ppolicy:hover,#agreement:hover{
     background-color: #131f23;
 }
+#sports:hover,#gaming:hover,#business:hover,#politics:hover,#about:hover,#help:hover,#blog:hover{
+    background-color: #1a282d;
+}
 .ese_hei{
     height: 100%;
     width: 100%;
