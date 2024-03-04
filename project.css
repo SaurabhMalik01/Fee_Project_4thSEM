@@ -244,7 +244,7 @@ body::-webkit-scrollbar {
 }
 .sidebar{
     width: 250px;
-    background-color: #111c1f;
+    background-color: #0b1416;
     height: 100%;
     /* position: fixed; */
     top: 0;
@@ -288,7 +288,7 @@ body::-webkit-scrollbar {
     transition: 0.3s ease;
 }
 .item .sub-menu{
-    background-color: #1e363c;
+    background-color: #111c1f;
     /* display: none; */
 }
 .gaming-sub-menu{
@@ -310,6 +310,9 @@ body::-webkit-scrollbar {
 }
 .sidebar::-webkit-scrollbar{
     width: 0px;
+}
+#home:hover,#popular:hover,#topics:hover,#resources:hover,#cpolicy:hover,#ppolicy:hover,#agreement:hover{
+    background-color: #131f23;
 }
 .ese_hei{
     height: 100%;
