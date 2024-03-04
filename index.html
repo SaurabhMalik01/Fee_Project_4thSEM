@@ -83,9 +83,15 @@
                 <i class="fas fa-angle-down dropdown"></i>
               </a>
               <div class="sub-menu">
-                <a href="" class="sub-item"
-                  ><i class="fa-solid fa-gamepad"></i>Gaming</a
-                >
+                <a class="sub-item gaming-sub-btn"><i class="fa-solid fa-gamepad"></i>Gaming<i class="fas fa-angle-down dropdown"></i></a>
+                  <!-- sub menu for  -->
+                  <div class="gaming-sub-menu dropdown">
+                    <a href="">Call of Duty</a>
+                    <a href="">Valorant</a>
+                    <a href="">GTA Online</a>
+
+
+                  </div>
                 <a href="" class="sub-item"
                   ><i class="fa-solid fa-baseball"></i>Sports</a
                 >
@@ -307,7 +313,15 @@
         $(".sub-btn").click(function () {
           $(this).next(".sub-menu").slideToggle();
           $(this).find(".dropdown").toggleClass("rotate");
+
         });
+        $(".gaming-sub-btn").click(function () {
+          $(this).next(".gaming-sub-menu").slideToggle();
+          $(this).find(".dropdown").toggleClass("rotate");
+
+        });
+
+
       });
     </script>
   </body>

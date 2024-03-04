@@ -291,6 +291,10 @@ body::-webkit-scrollbar {
     background-color: #1e363c;
     /* display: none; */
 }
+.gaming-sub-menu{
+    margin-left: 30px;
+    display: none;
+}
 .menu-btn{
     position: absolute;
     color: black;
