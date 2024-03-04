@@ -289,7 +289,7 @@ body::-webkit-scrollbar {
 }
 .item .sub-menu{
     background-color: #1e363c;
-    display: none;
+    /* display: none; */
 }
 .menu-btn{
     position: absolute;
@@ -644,7 +644,7 @@ body::-webkit-scrollbar {
         .news_one{
             height: 300px;
             /* width: 90%; */
-        }
+        /* } */
         .news_two{
             height: 300px;
             /* width: 300px; */
@@ -657,8 +657,8 @@ body::-webkit-scrollbar {
             height: 300px;
             /* width: 300px; */
         }
-    }
-}
+    /* }
+} */
 @media (max-width:400px)
 {
     .top10_trending_news{
@@ -680,4 +680,4 @@ body::-webkit-scrollbar {
             /* width: 200px; */
         }
     }
-} */
+}
