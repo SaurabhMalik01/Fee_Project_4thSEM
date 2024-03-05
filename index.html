@@ -84,15 +84,33 @@
               </a>
               <div class="sub-menu">
                 <a class="sub-item gaming-sub-btn" id="gaming"><i class="fa-solid fa-gamepad"></i>Gaming<i class="fas fa-angle-down dropdown"></i></a>
-                  <!-- sub menu for  -->
+                  <!-- sub menu for gaming  -->
                   <div class="gaming-sub-menu dropdown">
                     <a href="">Call of Duty</a>
                     <a href="">Valorant</a>
-                    <a href="">GTA Online</a>
+                    <a href="">GTA VI</a>
                   </div>
-                <a href="" class="sub-item" id="sports"><i class="fa-solid fa-baseball" ></i>Sports</a>
-                <a href="" class="sub-item" id="business"><i class="fa-solid fa-chart-line" ></i>Business</a>
-                <a href="" class="sub-item" id="crypto"><i class="fa-solid fa-bitcoin-sign" ></i>Crypto</a>
+                <a class="sub-item sports-sub-btn" id="sports"><i class="fa-solid fa-baseball" ></i>Sports<i class="fas fa-angle-down dropdown"></i></a>
+                <!-- sub menu for  sports-->
+                  <div class="sports-sub-menu dropdown">
+                   <a href="">Cricket</a>
+                   <a href="">Hockey</a>
+                   <a href="">Badminton</a>
+                </div>
+                <a class="sub-item business-sub-btn" id="business"><i class="fa-solid fa-chart-line" ></i>Business<i class="fas fa-angle-down dropdown"></i></a>
+                <!-- sub menu for Business-->
+                  <div class="business-sub-menu dropdown">
+                   <a href="">Apple</a>
+                   <a href="">Google</a>
+                   <a href="">Microsoft</a>
+               </div>
+                <a class="sub-item crypto-sub-btn" id="crypto"><i class="fa-solid fa-bitcoin-sign" ></i>Crypto<i class="fas fa-angle-down dropdown"></i></a>
+                <!-- sub menu for Crypto-->
+                  <div class="crypto-sub-menu dropdown">
+                   <a href="">Bitcoin</a>
+                   <a href="">Dogecoin</a>
+                   <a href="">Cardano</a>
+               </div>
                 <a href="" class="sub-item" id="politics"><i class="fa-solid fa-landmark" ></i>Politics</a>
               </div>
             </div>
@@ -299,6 +317,21 @@
         });
         $(".gaming-sub-btn").click(function () {
           $(this).next(".gaming-sub-menu").slideToggle();
+          $(this).find(".dropdown").toggleClass("rotate");
+
+        });
+        $(".sports-sub-btn").click(function () {
+          $(this).next(".sports-sub-menu").slideToggle();
+          $(this).find(".dropdown").toggleClass("rotate");
+
+        });
+        $(".business-sub-btn").click(function () {
+          $(this).next(".business-sub-menu").slideToggle();
+          $(this).find(".dropdown").toggleClass("rotate");
+
+        });
+        $(".crypto-sub-btn").click(function () {
+          $(this).next(".crypto-sub-menu").slideToggle();
           $(this).find(".dropdown").toggleClass("rotate");
 
         });
