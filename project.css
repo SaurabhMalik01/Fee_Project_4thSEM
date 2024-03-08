@@ -351,6 +351,8 @@ body::-webkit-scrollbar {
         /* position: absolute ; */
     }
 }
+
+/* side bar CSS*/
 .sidebar{
     /* margin-top: 90px; */
     width: 250px;
@@ -395,13 +397,25 @@ body::-webkit-scrollbar {
     position: absolute;
     margin: 10px;
     right: 10px;
-    transition: 0.3s ease;
+    transition: all 0.3s;
 }
 .item .sub-menu{
     background-color: #111c1f;
     /* display: none; */
 }
 .gaming-sub-menu{
+    margin-left: 30px;
+    display: none;
+}
+.sports-sub-menu{
+    margin-left: 30px;
+    display: none;
+}
+.business-sub-menu{
+    margin-left: 30px;
+    display: none;
+}
+.crypto-sub-menu{
     margin-left: 30px;
     display: none;
 }
@@ -424,7 +438,7 @@ body::-webkit-scrollbar {
 #home:hover,#popular:hover,#topics:hover,#resources:hover,#cpolicy:hover,#ppolicy:hover,#agreement:hover{
     background-color: #131f23;
 }
-#sports:hover,#gaming:hover,#business:hover,#politics:hover,#about:hover,#help:hover,#blog:hover{
+#sports:hover,#gaming:hover,#business:hover,#crypto:hover,#politics:hover,#about:hover,#help:hover,#blog:hover{
     background-color: #1a282d;
 }
 .ese_hei{

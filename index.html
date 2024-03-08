@@ -115,15 +115,33 @@
               </a>
               <div class="sub-menu">
                 <a class="sub-item gaming-sub-btn" id="gaming"><i class="fa-solid fa-gamepad"></i>Gaming<i class="fas fa-angle-down dropdown"></i></a>
-                  <!-- sub menu for  -->
+                  <!-- sub menu for gaming  -->
                   <div class="gaming-sub-menu dropdown">
                     <a href="">Call of Duty</a>
                     <a href="">Valorant</a>
-                    <a href="">GTA Online</a>
+                    <a href="">GTA VI</a>
                   </div>
-                <a href="" class="sub-item" id="sports"><i class="fa-solid fa-baseball" ></i>Sports</a>
-                <a href="" class="sub-item" id="business"><i class="fa-solid fa-chart-line" ></i>Business</a>
-                <a href="" class="sub-item" id="crypto"><i class="fa-solid fa-bitcoin-sign" ></i>Crypto</a>
+                <a class="sub-item sports-sub-btn" id="sports"><i class="fa-solid fa-baseball" ></i>Sports<i class="fas fa-angle-down dropdown"></i></a>
+                <!-- sub menu for  sports-->
+                  <div class="sports-sub-menu dropdown">
+                   <a href="">Cricket</a>
+                   <a href="">Hockey</a>
+                   <a href="">Badminton</a>
+                </div>
+                <a class="sub-item business-sub-btn" id="business"><i class="fa-solid fa-chart-line" ></i>Business<i class="fas fa-angle-down dropdown"></i></a>
+                <!-- sub menu for Business-->
+                  <div class="business-sub-menu dropdown">
+                   <a href="">Apple</a>
+                   <a href="">Google</a>
+                   <a href="">Microsoft</a>
+               </div>
+                <a class="sub-item crypto-sub-btn" id="crypto"><i class="fa-solid fa-bitcoin-sign" ></i>Crypto<i class="fas fa-angle-down dropdown"></i></a>
+                <!-- sub menu for Crypto-->
+                  <div class="crypto-sub-menu dropdown">
+                   <a href="">Bitcoin</a>
+                   <a href="">Dogecoin</a>
+                   <a href="">Cardano</a>
+               </div>
                 <a href="" class="sub-item" id="politics"><i class="fa-solid fa-landmark" ></i>Politics</a>
               </div>
             </div>
@@ -343,175 +361,31 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-  let postId = 0;
+      $(document).ready(function () {
+        //expand and collapse of menu bar
+        //$('.menu-btn').click(function(){
+        //  $('.sidebar').addClass('active');
+        //$('.menu-btn').css('visibility','hidden');
+        //});
+        //collapse
+        //$('.close-btn').click(function(){
+        //  $('.sidebar').removeClass('active');
+        //$('.menu-btn').css('visibility','visible')
+        //})
+        //for toggling sub menus
+        $(".sub-btn").click(function () {
+          $(this).next(".sub-menu").slideToggle();
+          $(this).find(".dropdown").toggleClass("rotate");
 
-  var modal = document.getElementById("myModal");
-  var btn = document.getElementById("openModalBtn");
-  var span = document.getElementsByClassName("close")[0];
+        });
+        $(".gaming-sub-btn").click(function () {
+          $(this).next(".gaming-sub-menu").slideToggle();
+          $(this).find(".dropdown").toggleClass("rotate");
 
-  btn.onclick = function () {
-    modal.style.display = "block";
-  }
+        });
 
-  span.onclick = function () {
-    modal.style.display = "none";
-  }
 
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
-
-  document.getElementById('postForm').addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    const title = document.getElementById('title').value;
-    const description = document.getElementById('description').value;
-    const fileInput = document.getElementById('file');
-    const file = fileInput.files[0];
-
-    const userName = "User"; // Replace with actual user information
-    const userProfilePic = "Project Images/user.png"; // Replace with actual path
-
-    // Function to create a new post element
-    const createPostElement = (postId, userName, userProfilePic, title, description, fileType, file) => {
-      const postContainer = document.getElementById('postsContainer');
-      const post = document.createElement('div');
-      post.className = 'post';
-      post.id = 'post' + postId;
-      postId++;
-
-      // Create post elements (user information, title, description, media, buttons, and count)
-      const userInfo = document.createElement('div');
-      userInfo.className = 'user-info';
-      const userImg = document.createElement('img');
-      userImg.src = userProfilePic;
-      userImg.alt = 'User Profile Picture';
-      const username = document.createElement('span');
-      username.textContent = userName;
-      userInfo.appendChild(userImg);
-      userInfo.appendChild(username);
-
-      const postTitle = document.createElement('h1');
-      postTitle.textContent = title;
-
-      const postDescription = document.createElement('p');
-      postDescription.textContent = description;
-
-      const postMedia = document.createElement('div');
-      postMedia.className = 'post-media';
-      if (fileType === 'image') {
-        const img = document.createElement('img');
-        img.src = URL.createObjectURL(file);
-        postMedia.appendChild(img);
-      } else if (fileType === 'video') {
-        const video = document.createElement('video');
-        video.src = URL.createObjectURL(file);
-        video.controls = true;
-        postMedia.appendChild(video);
-      }
-
-      const likeCount = document.createElement('span');
-      likeCount.className = 'like-count';
-      likeCount.textContent = '0 Like';
-
-      const commentSection = document.createElement('div');
-      commentSection.className = 'comment-section';
-      commentSection.style.display = 'none'; // Hide comment section by default
-
-      const interactionButtons = document.createElement('div');
-      interactionButtons.className = 'interaction-buttons';
-      const likeBtn = document.createElement('button');
-      likeBtn.textContent = 'Like';
-
-      const commentBtn = document.createElement('button');
-      commentBtn.textContent = 'Comment';
-
-      const commentInput = document.createElement('div');
-      commentInput.className = 'comment-input';
-      commentInput.style.display = 'none'; // Hide comment input by default
-      const input = document.createElement('input');
-      input.type = 'text';
-      input.placeholder = 'Add your comment...';
-      const submitBtn = document.createElement('button');
-      submitBtn.textContent = 'Submit';
-      submitBtn.addEventListener('click', function () {
-        const commentText = input.value;
-        if (commentText) {
-          const commentElement = document.createElement('div');
-          commentElement.className = 'comment';
-          commentElement.textContent = `${userName}: ${commentText}`;
-          commentSection.appendChild(commentElement);
-          input.value = '';
-        }
       });
-      commentInput.appendChild(input);
-      commentInput.appendChild(submitBtn);
-
-      // Add event listeners for like and comment buttons
-      let liked = false;
-      likeBtn.addEventListener('click', function () {
-        // Increment the like count if not liked, else decrement
-        const currentLikes = parseInt(likeCount.textContent);
-        if (liked) {
-          likeCount.textContent = (currentLikes - 1) + ' Like';
-        } else {
-          likeCount.textContent = (currentLikes + 1) + ' Like';
-        }
-        liked = !liked;
-      });
-
-      commentBtn.addEventListener('click', function () {
-        // Toggle the visibility of the comment section and input
-        commentSection.style.display = commentSection.style.display === 'none' ? 'block' : 'none';
-        commentInput.style.display = commentInput.style.display === 'none' ? 'block' : 'none';
-      });
-
-      interactionButtons.appendChild(likeBtn);
-      interactionButtons.appendChild(commentBtn);
-      interactionButtons.appendChild(likeCount);
-
-      // Append post elements to the post
-      post.appendChild(userInfo);
-      post.appendChild(postTitle);
-      post.appendChild(postDescription);
-      post.appendChild(postMedia);
-      post.appendChild(interactionButtons);
-      post.appendChild(commentInput);
-      post.appendChild(commentSection);
-
-      // Append post to the postsContainer
-      postContainer.insertBefore(post, postContainer.firstChild);
-    };
-
-    // Check if a file is selected
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        // Determine the file type (image or video)
-        const fileType = file.type.split('/')[0];
-        // Create a new post with the loaded file
-        createPostElement(postId, userName, userProfilePic, title, description, fileType, file);
-      };
-      reader.readAsDataURL(file);
-    } else {
-      // If no file is selected, create a post without media
-      createPostElement(postId, userName, userProfilePic, title, description);
-    }
-
-    // Reset form
-    this.reset();
-
-    // Close the modal
-    modal.style.display = "none";
-  });
-});
-
-
-
-
     </script>
     
     
