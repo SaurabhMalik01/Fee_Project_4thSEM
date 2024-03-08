@@ -37,7 +37,115 @@ nav {
     height: 2.50rem;
     cursor: pointer;
 }
+.badge0{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    #openModalBtn{
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 40px;
+    width: 120px;
+    border-radius: 20px;
+    background-color: red;
+    border: 1px solid white;
+    }
+}
+.modal {
+    
+    font-family: Arial, Helvetica, sans-serif;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    transition: opacity 0.3s ease-in-out;
+}
+.modal-enter,
+.modal-exit {
+  opacity: 0;
+}
+.modal-enter-active,
+.modal-exit-active {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+.modal-content {
+    background-color: #111C1F;
+    margin: 10% auto;
+    color: white;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    border-radius: 10px;
+    div{
+        margin-top: 10px;
+        
+    }
+}
 
+/* Styles for the close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Styles for the form */
+.modal-content-form {
+    margin-top: 20px;
+}
+
+.modal-content-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.modal-content-form input[type="text"],
+.modal-content-form textarea,
+.modal-content-form input[type="file"],
+.modal-content-form input[type="submit"] {
+    width: 100%;
+    padding: 8px;
+    color: black;
+    caret-color: black;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-top: 5px;
+}
+.modal-content-form input[type="file"]{
+    color: white;
+}
+.modal-content-form input[type="submit"] {
+    background-color: #2f79c9;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-content-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
 .name {
     /* margin-top: 0.75rem;
     margin-left: 0.50rem; */
@@ -325,6 +433,11 @@ body::-webkit-scrollbar {
     border-radius: 10px;
     /* background-color: #08066D; */
     margin: 10px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.ese_hei::-webkit-scrollbar{
+    display: none;
 }
 .top10_trending_news {
     padding: 1%;
@@ -642,13 +755,243 @@ body::-webkit-scrollbar {
 .ai_news_wala{
     height: 100%;
     width: 75%;
+    padding: 10px;
     /* background-color: red; */
 }
 .library_wala{
-    height: 100%;
-    width:25%;
-    /* background-color: green; */
+    margin-right: 20px;
+    height: 52%;
+    width: 500px;
+    /* width:100%; */
+    background-color: black;
+    text-align: left; 
+    overflow-x: hidden;
+    border-radius: 4%;
+    /* position: relative; */
 }
+.library_wala::-webkit-scrollbar{
+    display: none;
+}
+.channel-switcher {
+    background-color: #111C1F;
+    /* position: absolute; */
+    top: 100%; /* Adjust as needed */
+    width: 100%; /* Ensure it spans the full width */
+    left: 0; /* Align it to the left */
+}
+
+
+
+/* Styling for the channel buttons */
+.channel-btn {
+    background-color: rgba(0, 0, 0, 0.815); /* Button background color */
+    color: #fff; 
+    border: none; /* Remove default button border */
+    padding: 10px 30px; /* Button padding */
+    margin: 5px; /* Add some space between buttons */
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+    justify-content: center; /*Optional: Center the buttons vertically */
+    align-items: center; /* Optional: Center the buttons horizontally */
+    text-align: left;
+    font-size: medium;
+    width: 90%;
+
+
+}
+
+.channel-btn:hover {
+    background-color: #0F0BD7; /* Button background color on hover */
+    background-color: #ffffff; /* Button background color on hover */
+    color: #000;
+}
+
+/* Optional: Add some space around the channel-switcher */
+.channel-switcher {
+    padding: 20px; /* Padding around the content */
+}
+
+/* Ensure the heading has a clear and readable style */
+.channel-switcher h2 {
+    color: #fff; /* Matching the text color for consistency */
+    font-size: 24px; /* Larger font size for the heading */
+    margin-bottom: 15px; /* Space between the heading and buttons */
+}
+
+
+.news-section {
+    position: relative;
+}
+
+
+.channel-buttons {
+    display: flex; /* Use Flexbox */
+    flex-direction: column; /* Align items vertically */
+    gap: 5px; /* Optional: Add some space between the buttons */
+    justify-content: center; /* Optional: Center the buttons vertically */
+    align-items: left; /* Optional: Center the buttons horizontally */
+    
+}
+.channel-btn img{
+    margin-right: 13px;
+    border-radius: 20px;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.channel-buttons {
+    /* border: 1px solid white; */
+}
+#postsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: #0b1416;
+    width: 100%;
+}
+
+.post {
+    background-color: #111c1f;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.post:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    animation: fadeIn 1s ease-out;
+}
+
+.post-title {
+    color: #ffffff; /* Adjusted title color for better visibility */
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    animation: slideInLeft 1s ease-out;
+}
+
+.post-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    animation: zoomIn 1s ease-out;
+}
+
+.post-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.post-content {
+    color: #d2d2d2; /* Adjusted text color for better visibility */
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.like-button,
+.comment-button {
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background for an attractive look */
+    border: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.like-button:hover,
+.comment-button:hover {
+    background: linear-gradient(to right, #e44d26, #bf3b20); /* Darker gradient on hover for a nice effect */
+}
+
+.post-comments {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #d2d2d2; /* Adjusted border color for better visibility */
+    color: #d2d2d2;
+    padding: 10px;
+    width: 70%;
+    caret-color: #d2d2d2;
+}
+
+.comment-button {
+    background-color: #e44d26; /* Matching color for consistency */
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.comment-button:hover {
+    background-color: #bf3b20; /* Darker shade on hover for a nice effect */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-20px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+
+
 /* @media (max-width:900px)
 {
     .top10_trending_news{
