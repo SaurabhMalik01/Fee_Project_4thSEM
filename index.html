@@ -10,6 +10,9 @@
   </head>
   <body>
     <nav>
+      <div class="menu-btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
       <div class="logo">
         <img src="./Project Images/tt_logo.jpg" alt="logo" />
       </div>
@@ -524,17 +527,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     
 <script>
+  
   $(document).ready(function () {
     // Expand and collapse of the menu bar
-    $(".menu-btn").click(function () {
-      $(".sidebar").addClass("active");
-      $(".menu-btn").css("visibility", "hidden");
-    });
-    // Collapse
-    $(".close-btn").click(function () {
-      $(".sidebar").removeClass("active");
-      $(".menu-btn").css("visibility", "visible");
-    });
+    let flag=false;
+
+      $(".menu-btn").click(function () {
+        if (flag === false) {
+      $(".left_wala").css("display", "block");
+    } else {
+      $(".left_wala").css("display", "none");
+    }
+    
+    flag = !flag; // Toggle the flag
+  });
+//   if($(window).width()>1001){
+//     $(".left_wala").css("display", "block");
+//   }
+  
+//   else{
+//     $(".left_wala").css("display", "none");
+// }
     // For toggling sub menus
     $(".sub-btn").click(function () {
       $(this).next(".sub-menu").slideToggle();

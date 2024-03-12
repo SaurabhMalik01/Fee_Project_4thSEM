@@ -325,10 +325,11 @@ body::-webkit-scrollbar {
 .main_content_wala{
     overflow: hidden;
     height: 100%;
+    /* display: flex; */
     display: flex;
     /* border: 2px solid white; */
     /* background-color: red; */
-    /* width: 100%; */
+    width: 100vw;
     .left_wala{
         position: relative;
         /* border: 2px solid white; */
@@ -336,6 +337,7 @@ body::-webkit-scrollbar {
         /* background-color: green; */
         /* width: 25%; */
         width: 250px;
+        /* left: -250px; */
         /* overflow: hidden; */
         height: 100%;
         background-color: #111c1f;
@@ -343,7 +345,7 @@ body::-webkit-scrollbar {
     .right_wala{
         display: flex;
         /* background-color: red; */
-        width: 85vw;
+        /* width: 85vw; */
         padding-right: 5%;
         overflow: scroll;
         height: 300px;
@@ -443,6 +445,8 @@ body::-webkit-scrollbar {
     background-color: #1a282d;
 }
 .ese_hei{
+    /* display: grid; */
+    position: relative;
     height: 100%;
     width: 100%;
     border-radius: 10px;
@@ -456,7 +460,7 @@ body::-webkit-scrollbar {
 }
 .top10_trending_news {
     padding: 1%;
-    /* width: 100vh; */
+    /* width: 100vw; */
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -765,6 +769,7 @@ body::-webkit-scrollbar {
     height: 100%;
     width: 100%;
     display: flex;
+    position: relative;
 
 }
 .ai_news_wala{
@@ -774,9 +779,10 @@ body::-webkit-scrollbar {
     /* background-color: red; */
 }
 .library_wala{
+    position: relative;
     margin-right: 20px;
     height: 52%;
-    width: 500px;
+    width: 30vw;
     /* width:100%; */
     background-color: black;
     text-align: left; 
@@ -903,7 +909,7 @@ body::-webkit-scrollbar {
 }
 .post-media img{
     margin-top: 10px;
-    height:500px;
+    /* height:500px; */
    width: 100%;
 }
 .post-media video{
@@ -1137,11 +1143,68 @@ body::-webkit-scrollbar {
     }
 }
 
-/* @media only screen and (max-width:780px){
+.menu-btn{
+    display: none;
+}
+
+@media only screen and (max-width:1000px){
     .left_wala{
-        left: -250px;
+        display: none;
+        /* position: fixed; */
+    }
+    .right_wala{
+        width: 100vw;
+        padding-right: 0px;
+    }
+    .menu-btn{
+        display: block;
+        /* padding-right: 40px; */
+    }
+    .logo{
+        margin-left: 30px;
+    }
+}
+/* @media only screen and (min-width:1001px){
+    .left_wala{
+        display: block;
     }
 } */
+@media only screen and (max-width:900px){
+    .left_wala{
+        display: none;
+    }
+    .right_wala{
+        width: 100vw;
+        padding-right: 0px;
+    }
+    .ai_news_wala{
+        height: 100%;
+        width: 70%;
+        padding: 8px;
+        /* background-color: red; */
+    }
+    #postsContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        background-color: #0b1416;
+        width: 100%;
+    }
+    .post-media img{
+        margin-top: 10px;
+        /* height:500px; */
+       width: 90%;
+    }
+    .post-media video{
+        margin-top: 10px;
+        /* height:500px; */
+       width: 90%;
+    }
+    .channel-switcher{
+        padding: 0;
+    }
+}
 
 /* .interaction-buttons {
     display: inline-block; /* This ensures that the buttons and like count are on the same line */
