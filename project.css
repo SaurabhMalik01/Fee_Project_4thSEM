@@ -1163,6 +1163,14 @@ body::-webkit-scrollbar {
     .logo{
         margin-left: 30px;
     }
+    .library_wala{
+        height: 0%;
+        width: 0px;
+        overflow: hidden;
+    }
+    .post{
+        width: 850px;
+    }
 }
 /* @media only screen and (min-width:1001px){
     .left_wala{
