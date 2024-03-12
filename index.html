@@ -13,86 +13,83 @@
       <div class="menu-btn">
         <i class="fa-solid fa-bars"></i>
       </div>
-      <div class="logo">
-        <img src="./Project Images/tt_logo.jpg" alt="logo" />
-      </div>
-      <div class="name">
-        <p><span>Trend</span> Tracking</p>
-      </div>
-      <div class="search-bar">
-        <a href=""
-          ><img
-            width="20px"
-            height="20px"
-            src="https://img.icons8.com/ios-filled/50/FFFFFF/search--v1.png"
-            alt="search--v1"
-        /></a>
-        <div class="input_wala">
-          <input
-            type="text"
-            placeholder="Search for topics,locations & sources"
-            name="search"
-          />
+      <div style="display: flex; gap: 2vh;">
+        <div class="logo">
+          <img src="./Project Images/tt_logo.jpg" alt="#">
+        </div>
+        <div class="name">
+          <p> <span>Trend</span> Tracker</p>
         </div>
       </div>
-      <div class="extra_wala"></div>
-      <div class="badge0">
-        <button id="openModalBtn">
-          <i class="fa-solid fa-plus"></i>Create Post</button>
-        <div id="myModal" class="modal">
-
-          <!-- Modal content -->
-          <div class="modal-content">
-              <span class="close">&times;</span>
-              <h2>Create Post</h2>
-              <div class="modal-content-form">
-                  <form id="postForm" action="#" method="post" enctype="multipart/form-data">
-                      <div class="title">
-                          <label for="title">Title:</label>
-                          <input id="title" type="text" name="title" placeholder="Enter post title" required>
-                      </div>
-                      <!-- <div class="discription">
-                          <label for="description">Description:</label>
-                          <textarea id="description" name="description" placeholder="Enter your post description" required></textarea>
-                      </div> -->
-                      <div class="upload">
-                          <label for="file">Upload Photo or Video:</label>
-                          <input id="file" type="file" name="file" accept="image/*, video/*" required>
-                      </div>
-                      <input type="submit" value="Submit">
-                  </form>
-              </div>
-          </div>
-      </div>
+      <div class="search-bar">
+        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+        <input type="text" placeholder="Search for topics,locations & sources" name="search">
+       
   
       </div>
+      <div style="display: flex; gap: 2vh;">
+        <div class="badge0">
+          <button id="openModalBtn">
+            <i class="fa-solid fa-plus"></i>Create Post</button>
+          <div id="myModal" class="modal">
+  
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Create Post</h2>
+                <div class="modal-content-form">
+                    <form id="postForm" action="#" method="post" enctype="multipart/form-data">
+                        <div class="title">
+                            <label for="title">Title:</label>
+                            <input id="title" type="text" name="title" placeholder="Enter post title" required>
+                        </div>
+                        <!-- <div class="discription">
+                            <label for="description">Description:</label>
+                            <textarea id="description" name="description" placeholder="Enter your post description" required></textarea>
+                        </div> -->
+                        <div class="upload">
+                            <label for="file">Upload Photo or Video:</label>
+                            <input id="file" type="file" name="file" accept="image/, video/" required>
+                        </div>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+        </div>
+        <div class="badge2">
+          <button id="show-login"><i class="fa-solid fa-user"></i> Login</button>
+        </div>
+        <div class="popup">
+          <div class="close-btn">&times;</div>
+          <div class="form">
+            <h2>Log in</h2>
+            <div class="form-element">
+              <label for="email">Email</label>
+              <input type="text" id="email" placeholder="Enter email">
+            </div>
+            <div class="form-element">
+              <label for="password">Password</label>
+              <input type="password" id="password" placeholder="Enter password">
+            </div>
+            <div class="form-element">
+              <input type="checkbox" id="Remember-me">
+              <label for="Remember-me">Remember-me</label>
+            </div>
+            <div class="form-element">
+              <button>Login In</button>
+            </div>
+            <div class="form-element">
+              <a href="">Forgot Password?</a>
+            </div>
+          </div>
+        </div>
+        <div class="badge3">
+          <button>...</button>
+        </div>
       </div>
-      <div class="badge1">
-        <button>
-          <a href=""
-            ><img
-              width="20"
-              height="20"
-              src="https://img.icons8.com/ios/50/FFFFFF/qr-code--v1.png"
-              alt="qr-code--v1"
-          /></a>
-          <p>Get App</p>
-        </button>
-      </div>
-      <div class="badge2">
-        <button>
-          <img
-            width="20"
-            height="20"
-            src="https://img.icons8.com/ios-glyphs/30/FFFFFF/user--v1.png"
-            alt="user--v1"
-          />
-          <p>Log In</p>
-        </button>
-      </div>
-      <div class="badge3">
-        <button>...</button>
-      </div>
+  
     </nav>
     <div class="main_div"></div>
 
@@ -527,7 +524,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     
 <script>
-  
+  document.querySelector("#show-login").addEventListener("click",function(){
+    document.querySelector(".popup").classList.add("active");
+
+});
+document.querySelector(".popup .close-btn").addEventListener("click",function(){
+    document.querySelector(".popup").classList.remove("active");
+});
   $(document).ready(function () {
     // Expand and collapse of the menu bar
     let flag=false;
