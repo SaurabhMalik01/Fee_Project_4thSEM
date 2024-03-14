@@ -325,6 +325,7 @@ body {
     display: none;
     position: fixed;
     z-index: 1;
+    
     left: 0;
     top: 0;
     width: 100%;
@@ -722,6 +723,8 @@ body::-webkit-scrollbar {
 .ese_hei::-webkit-scrollbar{
     display: none;
 }
+
+
 .top10_trending_news {
     padding: 1%;
     /* width: 100vw; */
@@ -1304,6 +1307,20 @@ body::-webkit-scrollbar {
     position: absolute;
     transform: translate(-163px,16px);
     font-size: 14px ;
+}
+.interaction-buttons button:nth-child(4){
+    height: 30px;
+    width: 70px;
+    background-color: #1A282D;
+    border: 1px solid #202f35;
+    border-radius: 10px;
+    margin: 10px;
+    
+    
+}
+.interaction-buttons button:nth-child(4):hover{
+    background-color: #202f35;
+    cursor: pointer;
 }
 .comment-input{
     input{
