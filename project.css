@@ -1085,7 +1085,9 @@ body::-webkit-scrollbar {
 
 
 }
-
+.channel-btn a{
+    text-decoration: none;
+}
 .channel-btn:hover {
     background-color: #0F0BD7; /* Button background color on hover */
     background-color: #ffffff; /* Button background color on hover */
