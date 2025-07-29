@@ -17,8 +17,7 @@
 ## 🛠️ Tech Stack
 
 - **HTML5**
-- **CSS3** (or Tailwind / Bootstrap if used)
-- **JavaScript** (Vanilla JS or a framework like React)
+- **CSS3**
+- **JavaScript**
 
-> _No backend or database is used. All data is stored temporarily in memory or browser storage (e.g., localStorage)._
 
